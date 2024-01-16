@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+<body>
+    <!-- page header -->
+    <h1 class="container font dark-blue text-lg-center boxed flex-container"> <b>Load Forecasting Tool</b></h1>
+    <h5 class="container font orange text-sm-center flex-container"><b>Alaska Center for Energy and Power</b></h5> 
+    <div class='container font blue'>
+        <!-- instructions -->
+        <div class="card text-bg-light mb-3 text-center">
+            <div class="card-header">
+                <br>
+                <h6 class="card-title b">User Instructions: Guide to Navigating Page</h6>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Drag the toggles to see load forecasts based on chosen adoption rates of electric vehicles (EVs), behind-the-meter (BTM) solar, and heat pumps. </p>
+            </div>
+            <div class="card-footer text-body-secondary">
+                <em>Click "visualize" below to see the load forecasts in graph form!</em>
+            </div>
+        </div> 
+        <h3 class="font orange text-sm-center"><b>Toggles</b></h3>
+        <form class="font text-center container gray" action="/" method="post">
+            <br>
+            <label for="customRange1" class="form-label"><b>Electric Vehicles (EVs)</b></label>
+                <div class="textbox container"> 
+                    <div class="slider-value" id="sliderValue1">0</div>
+                </div>
+                <input type="range" class="form-range" name="value1"id="customRange1" style="width: 70%">
+                <br>
+                <br> 
+            <label for="customRange2" class="form-label"><b>Behind-the-Meter (BTM) Solar</b></label>
+                <div class="textbox container"> 
+                    <div class="slider-value" id="sliderValue2">0</div>
+                </div>
+                <input type="range" class="form-range" name="value2" id="customRange2" style="width: 70%">  
+                <br>
+                <br> 
+            <label for="customRange3" class="form-label"><b>Heat Pumps</b></label>
+                <div class="textbox container"> 
+                    <div class="slider-value" id="sliderValue3">0</div>
+                </div>
+                <input type="range" class="form-range" name="value3" id="customRange3" style="width: 70%">
+                <br>
+                <br> 
+            <a href="/results">
+                <button type="submit" class="btn btn-primary" href="/visualizations">Visualize</button> 
+            </a>
+            <br>
+            <br>
+        </form>
+        <script>
+            // Function to update the number next to the slider
+            function updateSliderValue(sliderId, num) {
+                document.getElementById(sliderId).innerText = num;
+            }
+    
+            // Function to update all sliders when any of them are changed
+            function updateAllSliders() {
+                let evs = parseInt(document.getElementById("customRange1").value);
+                let btms = parseInt(document.getElementById("customRange2").value);
+                let pumps = parseInt(document.getElementById("customRange3").value);
+    
+                // Update the displayed values next to the sliders
+                updateSliderValue("sliderValue1", evs);
+                updateSliderValue("sliderValue2", btms);
+                updateSliderValue("sliderValue3", pumps);
+            }
+    
+            // Add event listeners to all sliders
+            document.getElementById("customRange1").addEventListener("input", updateAllSliders);
+            document.getElementById("customRange2").addEventListener("input", updateAllSliders);
+            document.getElementById("customRange3").addEventListener("input", updateAllSliders);
+    
+            // Trigger initial update
+            updateAllSliders();
+        </script>
+        <script>
+            function clearSessionData() {
+                // Send an AJAX request to the Flask route /clear_data
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '/clear_data', true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                        // Once the request is successful, reload the page to clear the session data on the frontend
+                        window.location.reload();
+                    }
+                };
+                xhr.send();
+            }
+        </script>
+    </div>
+</body>
+{% endblock %}
+
+{% block content %}
+<br>
+<h6>Webpage Citation: </h6>
+<p> Hou, Cathy. "Home." Load Forecasting Tool. Published August 10,2023. URL </p>
+{% endblock %}

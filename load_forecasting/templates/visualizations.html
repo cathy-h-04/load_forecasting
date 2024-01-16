@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}
+visualizations
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+{% endblock %}
+
+{% block main %}
+<!-- <div id="graph"></div>
+<script>
+    // Fetch JSON data using AJAX
+    fetch('/get_graph_json')
+        .then(response => response.json())
+        .then(graphJson => {
+            
+            const parsedGraphJson = JSON.parse(graphJson);
+
+            Plotly.newPlot('graph', parsedGraphJson.data, parsedGraphJson.layout);
+
+            // Add buttons or checkboxes to toggle trace visibility
+            var buttons = [];
+            graphJson.data.forEach(function(trace, index) {
+                buttons.push({
+                    label: trace.name,
+                    method: 'restyle',
+                    args: ['visible', index < 1 ? true : false]  // Hide all but the first trace initially
+                });
+            });
+
+            Plotly.addButtons('graph', buttons);
+        })
+        .catch(error => console.error('Error fetching JSON:', error));
+</script> -->
+<div class="container">
+    <div id="graph"></div>
+</div>
+<script>
+        // Import the Plotly library
+    // Fetch JSON data using AJAX
+    fetch('/get_graph_json')
+        .then(response => response.json())
+        .then(graphJson => {
+            const parsedGraphJson = JSON.parse(graphJson);
+
+            // Create the initial graph with hidden traces
+            Plotly.newPlot('graph', parsedGraphJson.data, parsedGraphJson.layout);
+
+            // Add buttons or checkboxes to toggle trace visibility
+            var buttons = [];
+            graphJson.data.forEach(function(trace, index) {
+                buttons.push({
+                    label: trace.name,
+                    method: 'restyle',
+                    args: ['visible', index < 1 ? true : false]  // Hide all but the first trace initially
+                });
+            });
+
+            Plotly.addButtons('graph', buttons);
+        })
+        .catch(error => console.error('Error fetching JSON:', error));
+
+</script>
+
+
+
+{% endblock %}
+
+{% block content %}
+<br>
+<h6>Webpage Citation: </h6>
+<p> Hou, Cathy. "Visualizations." Load Forecasting Tool. Published August 10,2023. URL </p>
+{% endblock %}

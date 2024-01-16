@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block title %}
+about
+{% endblock %}
+
+{% block main %}
+<body>
+    <!-- page header -->
+    <h1 class="container font dark-blue text-lg-center boxed flex-container"><b>About</b></h1>
+    <h5 class="container font orange text-sm-center flex-container"><b>Thanks to our contributors!</b></h5> 
+    <div class='container font blue'>
+        <!-- appropriate citation, funding, and background information -->
+        <!-- info and background information about paper -->
+        <div class="card text-bg-light mb-3 text-center">
+            <div class="card-header">
+                <br>
+                <h4 class="card-title"><b>Information About Study</b></h4>
+            </div>
+            <div class="card-body">
+                <p class="card-text">The data for this website was taken from the 
+                article "Load, Electrification Adoption, and Behind-the-Meter
+                Solar Forecasts for Alaska's Railbelt Transmission System."</p>
+                <h6><b>Citation:</b></h6>
+                <p>
+                    Cicilio, P.; Francisco, A.; Morelli, C.; Wilber, M.; Pike, C.; 
+                    VanderMeer, J.; Colt, S.; Pride, D.; Helder, N.K.<br>
+                    Load, Electrification Adoption, and Behind-the-Meter Solar 
+                    Forecasts for Alaska's Railbelt Transmission <br>
+                    System. <em>Preprints</em> <b>2023</b>, 2023070988.<br>
+                    <a href="https://doi.org/10.20944/preprints202307.0988.v1" target="_blank">https://doi.org/10.20944/preprints202307.0988.v1</a>
+                </p>
+            </div>
+            <div class="card-footer text-body-secondary">
+                <a href="https://doi.org/10.20944/preprints202307.0988.v1" class="btn btn-primary">View Paper</a>
+            </div>
+        </div>
+        <br>
+        <!-- Funders -->
+        <h4 class='text-center'><b>Study Funding</b></h4>
+        <h6 class='text-center'><em>Special thanks to our funders!</em></h6>
+        <div class="card-group">
+            <div class="card">
+              <img src="https://thearcticprogram.net/assets/img/temp-arctic-logo.png" class="img-thumbnail" alt="ARCTIC logo">
+              <div class="card-body">
+                <h5 class="card-title">ARCTIC 2 Program</h5>
+                <p class="card-text">This project is part of the Arctic Regional 
+                Collaboration for Technology Innovation and Commercialization 
+                (ARCTIC) 2 Program - Innovation Network</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary"><br></small>
+              </div>
+            </div>
+            <div class="card">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Office_of_Naval_Research_Official_Logo.png?20131008193932" class="img-thumbnail" alt="ONR Logo">
+              <div class="card-body">
+                <h5 class="card-title">Office of Naval Research</h5>
+                <p class="card-text">ARCTIC 2 is an initiative supported by the 
+                    Office of Naval Research (ONR) Award #N00014-22-1-2049.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary"><br></small>
+              </div>
+            </div>
+            <div class="card">
+                <div class="flex-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/State_Seal_of_Alaska.svg/300px-State_Seal_of_Alaska.svg.png" class="flex-container img-thumbnail" alt="Alaska State Seal" width="220" height="220">
+                </div>
+              <div class="card-body">
+                <h5 class="card-title">Alaska FY23</h5>
+                <p class="card-text">This project is funded by the state of 
+                    Alaska FY23 economic development capital funding.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary"><br></small>
+              </div>
+            </div>
+            <div class="card">
+                <div class="flex-container">
+                    <img src="https://new.nsf.gov/themes/custom/nsf_theme/components/images/logo/logo-desktop.svg" class="img-thumbnail" alt="NSF REU Logo">
+                </div>
+              <div class="card-body">
+                <h5 class="card-title">NSF REU</h5>
+                <p class="card-text">This website was developed as part of an NSF REU intern's project.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary"><br></small>
+              </div>
+            </div>
+          </div> 
+    </div>
+</body>
+{% endblock %}
+
+{% block content %}
+<br>
+<h6>Webpage Citation: </h6>
+<p> Hou, Cathy. "About." Load Forecasting Tool. Published August 10,2023. URL </p>
+{% endblock %}
+
+

@@ -1,0 +1,149 @@
+
+/* navbars */
+nav .navbar-brand {
+    font-size: xx-large;
+}
+
+.navbar-color {
+    background-color: dimgray;
+}
+
+/* font */
+.font {
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* colors */
+.dark-blue {
+    background-color: #0789BB;
+    color: white
+}
+
+.blue {
+    background-color: #A9E6FB;
+    color: black
+}
+
+.orange {
+    background-color: #F8C514;
+    color: black
+}
+
+.white {
+    color: white;
+}
+
+.backdrop {
+    background-color: whitesmoke
+}
+
+.gray{
+    background-color: rgb(206, 204, 204)
+}
+
+.shadowBlue {
+    color: #788AA3;
+}
+
+.btn-primary {
+    background-color: #788AA3;
+    color:white;
+}
+
+/* borders */
+.boxed {
+    border: 3px solid rgb(4, 72, 127);
+}
+
+.btn-outline{
+    border-color: #788AA3;
+    color: white;
+}
+
+/* positioning */
+.center {
+    text-align: center
+}
+
+.left {
+    text-align: left;
+}
+
+.padding {
+    padding: 15px;
+}
+
+.responsive {
+    max-width: 70%;
+    height: auto;
+}
+
+.flex-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.homepagedesign {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.2225%;
+    padding-bottom: 0;
+    box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+    margin-top: 1.6em;
+    margin-bottom: 0.9em;
+    overflow: hidden;
+    border-radius: 8px;
+    will-change: transform;
+}
+
+.framestyle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.btn-logout {
+    width: 100%;
+    padding: 3px 20px;
+    text-align: left;
+}
+
+.titlecolor {
+    background: -webkit-linear-gradient(#788AA3, #92B6B1, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+  
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+  
+.column {
+display: flex;
+flex-direction: column;
+flex-basis: 100%;
+flex: 1;
+}
+
+
+
+/* textbox */
+.textbox {
+    background-color: white;
+    border: 2px solid gray;
+    display: block;
+    box-shadow: gray 3px 3px;
+    height: 5%; width: 2.5%;
+    align-items: center;
+    display: flex;
+    justify-content: center;}
